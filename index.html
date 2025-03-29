@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OMBD Movies</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMBD Movies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 min-h-screen flex flex-col">
-    <!-- Header Component -->
-    <header class="bg-white shadow sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-blue-600">OMBD Movies</a>
-            <button class="text-xl text-gray-800 md:hidden">☰</button>
-            <div class="space-x-4 hidden md:flex">
-                <a href="login.php" class="text-gray-800 hover:text-blue-600">Login</a>
-                <a href="register.php" class="text-gray-800 hover:text-blue-600">Sign Up</a>
-            </div>
-        </div>
-    </header>
+<body class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white min-h-screen flex flex-col">
+  <!-- Header Component -->
+  <header class="bg-white bg-opacity-20 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center relative">
+      <a href="index.html" class="text-2xl font-extrabold text-white">🎬 OMBD Movies</a>
+      <!-- Hamburger Button (visible on mobile) -->
+      <button id="menu-btn" class="text-2xl text-white md:hidden">☰</button>
+      <!-- Navigation links -->
+      <nav id="menu" class="absolute top-full left-0 right-0 bg-white bg-opacity-20 flex flex-col items-center py-4 space-y-4 hidden md:static md:bg-transparent md:flex md:flex-row md:space-y-0 md:space-x-6">
+        <a href="login.php" class="text-white hover:text-yellow-400">Login</a>
+        <a href="register.php" class="text-white hover:text-yellow-400">Sign Up</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="flex-1 py-8">
-        <section class="container mx-auto text-center px-4">
-            <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to OMBD Movies</h1>
-            <p class="text-lg mb-6 max-w-xl mx-auto">Discover and explore movies from the Open Movie Database. Find information about your favorite films, actors, and directors all in one place.</p>
-            <a href="register.php" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">Get Started</a>
-        </section>
-    </main>
+  <main class="flex-1 py-12">
+    <section class="container mx-auto text-center px-4">
+      <h1 class="text-5xl font-extrabold text-yellow-300 mb-6">Explore the World of Movies</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Discover movies from the Open Movie Database. Search for your favorite films, actors, and directors effortlessly.
+      </p>
+      <a href="register.php" class="inline-block px-8 py-4 bg-yellow-400 text-gray-800 font-bold rounded-full hover:bg-yellow-500 shadow-lg">Get Started</a>
+    </section>
+  </main>
 
-    <footer class="py-8 bg-gray-100 text-center">
-        <p class="text-gray-600">&copy; 2025 OMBD Movies. All rights reserved.</p>
-    </footer>
+  <footer class="py-8 bg-white bg-opacity-20 text-center">
+    <p class="text-white">&copy; 2025 OMBD Movies. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
