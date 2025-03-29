@@ -20,7 +20,7 @@ function addFavourite() {
         $stmt->bind_param("ssi", $title, $poster, $userId);
         
         if ($stmt->execute()) {
-            return ["success" => true, "message" => "Movie added to favorites successfully!"];
+            return ["success" => true, "message" => "Movie Added to favorites successfully!"];
         } else {
             return ["success" => false, "message" => "Failed to add movie: " . $stmt->error];
         }
